@@ -12,9 +12,9 @@ float calculateCost(float duration) {
 
 int main() {
     float duration, cost;
-    printf("Введіть тривалість розмови в хвилинах: ");
+    printf("Р’РІРµРґС–С‚СЊ С‚СЂРёРІР°Р»С–СЃС‚СЊ СЂРѕР·РјРѕРІРё РІ С…РІРёР»РёРЅР°С…: ");
     scanf("%f", &duration);
     cost = calculateCost(duration);
-    printf("Вартість розмови : %.2f грн .", cost);
+    printf("Р’Р°СЂС‚С–СЃС‚СЊ СЂРѕР·РјРѕРІРё : %.2f ГЈГ°Г­ .", cost);
     return 0;
 }
