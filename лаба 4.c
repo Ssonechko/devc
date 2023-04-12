@@ -2,14 +2,14 @@
 
 int main() {
     int a, b, c;
-    printf("Введіть три числа: ");
+    printf("Р’РІРµРґС–С‚СЊ С‚СЂРё С‡РёСЃР»Р°:: ");
     scanf("%d %d %d", &a, &b, &c);
     if (a > b && a > c) {
-        printf("%d найбільше", a);
+        printf("%d РЅР°Р№Р±С–Р»СЊС€Рµ", a);
     } else if (b > a && b > c) {
-        printf("%d найбільше", b);
+        printf("%d РЅР°Р№Р±С–Р»СЊС€Рµ", b);
     } else {
-        printf("%d найбільше", c);
+        printf("%d РЅР°Р№Р±С–Р»СЊС€Рµ", c);
     }
     return 0;
 }
