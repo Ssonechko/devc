@@ -1,41 +1,41 @@
 #include <stdio.h>
 #include <string.h>
 
-// Структура країни
+// РЎС‚СЂСѓРєС‚СѓСЂР° РєСЂР°С—РЅРё
 struct Country {
-    char name[50]; // Назва
-    char capital[50]; // Столиця
-    int population; // Кількість населення
-    float area; // Площа
-    int numCities; // Кількість міст
+    char name[50]; // РќР°Р·РІР°
+    char capital[50]; // РЎС‚РѕР»РёС†СЏ
+    int population; // РљС–Р»СЊРєС–СЃС‚СЊ РЅР°СЃРµР»РµРЅРЅСЏ
+    float area; // РџР»РѕС‰Р°
+    int numCities; // РљС–Р»СЊРєС–СЃС‚СЊ РјС–СЃС‚
 };
 
 int main() {
-    struct Country countries[100]; // Оголошуємо масив країн
-    int n; // Кількість країн
-    printf("Введіть кількість країн: ");
+    struct Country countries[100]; // РћРіРѕР»РѕС€СѓС”РјРѕ РјР°СЃРёРІ РєСЂР°С—РЅ
+    int n; // РљС–Р»СЊРєС–СЃС‚СЊ РєСЂР°С—РЅ
+    printf("Р’РІРµРґС–С‚СЊ РєС–Р»СЊРєС–СЃС‚СЊ РєСЂР°С—РЅ: ");
     scanf("%d", &n);
 
-    // Вводимо дані про країни
+    // Р’РІРѕРґРёРјРѕ РґР°РЅС– РїСЂРѕ РєСЂР°С—РЅРё
     for (int i = 0; i < n; i++) {
-        printf("\nВведіть дані про країну #%d:\n", i+1);
-        printf("Назва: ");
+        printf("\nР’РІРµРґС–С‚СЊ РґР°РЅС– РїСЂРѕ РєСЂР°С—РЅСѓ #%d:\n", i+1);
+        printf("РќР°Р·РІР°: ");
         scanf("%s", countries[i].name);
-        printf("Столиця: ");
+        printf("РЎС‚РѕР»РёС†СЏ: ");
         scanf("%s", countries[i].capital);
-        printf("Кількість населення: ");
+        printf("РљС–Р»СЊРєС–СЃС‚СЊ РЅР°СЃРµР»РµРЅРЅСЏ: ");
         scanf("%d", &countries[i].population);
-        printf("Площа: ");
+        printf("РџР»РѕС‰Р°: ");
         scanf("%f", &countries[i].area);
-        printf("Кількість міст: ");
+        printf("РљС–Р»СЊРєС–СЃС‚СЊ РјС–СЃС‚: ");
         scanf("%d", &countries[i].numCities);
     }
 
-    // Сортуємо країни за кількістю населення
+    // РЎРѕСЂС‚СѓС”РјРѕ РєСЂР°С—РЅРё Р·Р° РєС–Р»СЊРєС–СЃС‚СЋ РЅР°СЃРµР»РµРЅРЅСЏ
     for (int i = 0; i < n-1; i++) {
         for (int j = i+1; j < n; j++) {
             if (countries[i].population > countries[j].population) {
-                // Міняємо місцями елементи, якщо потрібно
+                // РњС–РЅСЏС”РјРѕ РјС–СЃС†СЏРјРё РµР»РµРјРµРЅС‚Рё, СЏРєС‰Рѕ РїРѕС‚СЂС–Р±РЅРѕ
                 struct Country temp = countries[i];
                 countries[i] = countries[j];
                 countries[j] = temp;
@@ -43,15 +43,15 @@ int main() {
         }
     }
 
-    // Виводимо дані про країни у порядку зростання кількості населення
-    printf("\nДані про країни у порядку зростання кількості населення:\n");
+    // Р’РёРІРѕРґРёРјРѕ РґР°РЅС– РїСЂРѕ РєСЂР°С—РЅРё Сѓ РїРѕСЂСЏРґРєСѓ Р·СЂРѕСЃС‚Р°РЅРЅСЏ РєС–Р»СЊРєРѕСЃС‚С– РЅР°СЃРµР»РµРЅРЅСЏ
+    printf("\nР”Р°РЅС– РїСЂРѕ РєСЂР°С—РЅРё Сѓ РїРѕСЂСЏРґРєСѓ Р·СЂРѕСЃС‚Р°РЅРЅСЏ РєС–Р»СЊРєРѕСЃС‚С– РЅР°СЃРµР»РµРЅРЅСЏ:\n");
     for (int i = 0; i < n; i++) {
-        printf("\nКраїна #%d:\n", i+1);
-        printf("Назва: %s\n", countries[i].name);
-        printf("Столиця: %s\n", countries[i].capital);
-        printf("Кількість населення: %d\n", countries[i].population);
-        printf("Площа: %.2f\n", countries[i].area);
-        printf("Кількість міст: %d\n", countries[i].numCities);
+        printf("\nРљСЂР°С—РЅР° #%d:\n", i+1);
+        printf("РќР°Р·РІР°: %s\n", countries[i].name);
+        printf("РЎС‚РѕР»РёС†СЏ: %s\n", countries[i].capital);
+        printf("РљС–Р»СЊРєС–СЃС‚СЊ РЅР°СЃРµР»РµРЅРЅСЏ: %d\n", countries[i].population);
+        printf("РџР»РѕС‰Р°: %.2f\n", countries[i].area);
+        printf("РљС–Р»СЊРєС–СЃС‚СЊ РјС–СЃС‚: %d\n", countries[i].numCities);
     }
 
     return 0;
